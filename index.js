@@ -5,14 +5,18 @@ const server = express();
 server.use(express.json());
 
 const projects = [];
+let requestCount = 0;
 
 server.use((req, res, next) => {
   console.time('Request');
-  console.log(`Método: ${ req.method }; URL: ${ req.url }`);
+  
+  requestCount++;
+  console.log(`Número de requisições efetuadas até o momento: ${requestCount}`);
 
   next();
   console.timeEnd('Request');
 });
+
 
 //Função que verifica se o projeto existe;
 function checkProjectExists(req, res, next) {

@@ -8,7 +8,7 @@ const projects = [];
 let requestCount = 0;
 
 
-//Exibe no console o número de requests efetuadas;
+//Exibe no terminal o número de requests efetuadas;
 server.use((req, res, next) => {
   
   requestCount++;

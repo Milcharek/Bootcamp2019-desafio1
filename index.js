@@ -7,14 +7,14 @@ server.use(express.json());
 const projects = [];
 let requestCount = 0;
 
+
+//Exibe no console o número de requests efetuadas;
 server.use((req, res, next) => {
-  console.time('Request');
   
   requestCount++;
-  console.log(`Número de requisições efetuadas até o momento: ${requestCount}`);
+  console.log(`Number of requests: ${requestCount}`);
 
   next();
-  console.timeEnd('Request');
 });
 
 
